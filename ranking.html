@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Ranking Nilai TKJ</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f2a44;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+width:400px;
+}
+
+th,td{
+border:1px solid white;
+padding:10px;
+}
+
+th{
+background:#ffd166;
+color:black;
+}
+
+</style>
+
+<script>
+
+async function loadRanking(){
+
+var url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqs-8lunzd77k36faD8j7x91EBYMbSRFViD5gB04kGdSmi4DCKPikzC4QqhotF2QjDkbmZm7i-R3OJ/pub?gid=1337124987&single=true&output=csv";
+
+var data = await fetch(url);
+
+var text = await data.text();
+
+var rows = text.split("\n");
+
+var html="";
+
+for(var i=1;i<rows.length;i++){
+
+var kolom = rows[i].split(",");
+
+if(kolom.length>2){
+
+html += "<tr>";
+html += "<td>"+i+"</td>";
+html += "<td>"+kolom[0]+"</td>";
+html += "<td>"+kolom[2]+"</td>";
+html += "</tr>";
+
+}
+
+}
+
+document.getElementById("ranking").innerHTML = html;
+
+}
+
+</script>
+
+</head>
+
+<body onload="loadRanking()">
+
+<h1>🏆 Ranking Quiz TKJ</h1>
+
+<table>
+
+<tr>
+<th>Rank</th>
+<th>Nama</th>
+<th>Nilai</th>
+</tr>
+
+<tbody id="ranking"></tbody>
+
+</table>
+
+<br><br>
+
+<a href="index.html">⬅ Kembali ke Dashboard</a>
+
+</body>
+
+</html>
