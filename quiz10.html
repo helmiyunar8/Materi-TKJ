@@ -26,26 +26,6 @@ font-size:16px;
 </style>
 
 <script>
-<script>
-
-function cek(){
-
-var nilai = 0;
-
-if(document.querySelector('input[name="q1"]:checked').value=="A"){nilai+=10;}
-if(document.querySelector('input[name="q2"]:checked').value=="B"){nilai+=10;}
-if(document.querySelector('input[name="q3"]:checked').value=="C"){nilai+=10;}
-if(document.querySelector('input[name="q4"]:checked').value=="A"){nilai+=10;}
-if(document.querySelector('input[name="q5"]:checked').value=="B"){nilai+=10;}
-if(document.querySelector('input[name="q6"]:checked').value=="C"){nilai+=10;}
-if(document.querySelector('input[name="q7"]:checked').value=="A"){nilai+=10;}
-if(document.querySelector('input[name="q8"]:checked').value=="B"){nilai+=10;}
-if(document.querySelector('input[name="q9"]:checked').value=="C"){nilai+=10;}
-if(document.querySelector('input[name="q10"]:checked').value=="A"){nilai+=10;}
-
-document.getElementById("hasil").innerHTML = "Nilai kamu : " + nilai;
-
-}
 
 var waktu = 600;
 
@@ -67,22 +47,20 @@ alert("Waktu habis!");
 
 setInterval(hitung,1000);
 
-</script>
-
 function cek(){
 
 var nilai = 0;
 
-if(document.querySelector('input[name="q1"]:checked').value=="A"){nilai+=10;}
-if(document.querySelector('input[name="q2"]:checked').value=="B"){nilai+=10;}
-if(document.querySelector('input[name="q3"]:checked').value=="C"){nilai+=10;}
-if(document.querySelector('input[name="q4"]:checked').value=="A"){nilai+=10;}
-if(document.querySelector('input[name="q5"]:checked').value=="B"){nilai+=10;}
-if(document.querySelector('input[name="q6"]:checked').value=="C"){nilai+=10;}
-if(document.querySelector('input[name="q7"]:checked').value=="A"){nilai+=10;}
-if(document.querySelector('input[name="q8"]:checked').value=="B"){nilai+=10;}
-if(document.querySelector('input[name="q9"]:checked').value=="C"){nilai+=10;}
-if(document.querySelector('input[name="q10"]:checked').value=="A"){nilai+=10;}
+if(document.querySelector('input[name="q1"]:checked')?.value=="A"){nilai+=10;}
+if(document.querySelector('input[name="q2"]:checked')?.value=="B"){nilai+=10;}
+if(document.querySelector('input[name="q3"]:checked')?.value=="C"){nilai+=10;}
+if(document.querySelector('input[name="q4"]:checked')?.value=="A"){nilai+=10;}
+if(document.querySelector('input[name="q5"]:checked')?.value=="B"){nilai+=10;}
+if(document.querySelector('input[name="q6"]:checked')?.value=="C"){nilai+=10;}
+if(document.querySelector('input[name="q7"]:checked')?.value=="A"){nilai+=10;}
+if(document.querySelector('input[name="q8"]:checked')?.value=="B"){nilai+=10;}
+if(document.querySelector('input[name="q9"]:checked')?.value=="C"){nilai+=10;}
+if(document.querySelector('input[name="q10"]:checked')?.value=="A"){nilai+=10;}
 
 document.getElementById("hasil").innerHTML = "Nilai kamu : " + nilai;
 
@@ -94,9 +72,9 @@ document.getElementById("hasil").innerHTML = "Nilai kamu : " + nilai;
 
 <body>
 
-
 <h1>Quiz TKJ</h1>
-  <h2 id="timer">Waktu : 10:00</h2>
+
+<h2 id="timer">Waktu : 10:00</h2>
 
 <p>1. Apa kepanjangan LAN?</p>
 <input type="radio" name="q1" value="A"> Local Area Network<br>
