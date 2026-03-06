@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
 <title>LMS TKJ SMKN 7 LUWU</title>
 
@@ -11,26 +12,31 @@ font-family:Arial;
 background:#0f2a44;
 color:white;
 text-align:center;
-padding:50px;
+padding:40px;
 }
 
 h1{
 font-size:40px;
+margin-bottom:5px;
+}
+
+h2{
+margin-top:0;
 }
 
 .menu{
-margin-top:40px;
+margin-top:30px;
 }
 
 a{
 display:block;
-background:#1b4965;
+background:#1f4f6a;
 padding:15px;
 margin:12px auto;
 width:320px;
 color:white;
 text-decoration:none;
-border-radius:8px;
+border-radius:10px;
 font-size:18px;
 }
 
@@ -39,27 +45,55 @@ background:#ffd166;
 color:black;
 }
 
+.logo{
+width:100px;
+margin-bottom:15px;
+}
+
 </style>
+
+<script>
+
+function tanggal(){
+
+var hari = new Date();
+
+document.getElementById("tanggal").innerHTML =
+hari.toLocaleDateString();
+
+}
+
+</script>
 
 </head>
 
-<body>
+<body onload="tanggal()">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Logo_SMK.png" class="logo">
 
 <h1>LMS TKJ</h1>
 <h2>SMKN 7 LUWU</h2>
+
 <p>Guru : Helmi Yunar</p>
+
+<p id="tanggal"></p>
 
 <div class="menu">
 
 <a href="materi.html">📚 Materi Pembelajaran</a>
 
+<a href="quiz10.html">🧠 Quiz Online</a>
+
+<a href="absensi.html">📋 Absensi Siswa</a>
+
 <a href="tugas.html">📝 Tugas Siswa</a>
 
-<a href="lkpd.html">📄 LKPD</a>
+<a href="ranking.html">🏆 Ranking Nilai</a>
 
 <a href="about.html">👨‍🏫 Tentang Guru</a>
 
 </div>
 
 </body>
+
 </html>
