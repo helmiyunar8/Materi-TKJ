@@ -18,7 +18,7 @@ padding:40px;
 table{
 margin:auto;
 border-collapse:collapse;
-width:400px;
+width:420px;
 }
 
 th,td{
@@ -39,28 +39,31 @@ async function loadRanking(){
 
 var url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqs-8lunzd77k36faD8j7x91EBYMbSRFViD5gB04kGdSmi4DCKPikzC4QqhotF2QjDkbmZm7i-R3OJ/pub?gid=1337124987&single=true&output=csv";
 
-var data = await fetch(url);
+var res = await fetch(url);
+var text = await res.text();
 
-var text = await data.text();
+var rows = text.trim().split("\n").slice(1); // buang header
 
-var rows = text.split("\n");
+var data = rows.map(r=>{
+var c = r.split(",");
+return {
+nama: c[0],
+kelas: c[1],
+nilai: parseInt(c[2]) || 0
+};
+});
+
+// urutkan dari nilai tertinggi
+data.sort((a,b)=>b.nilai - a.nilai);
 
 var html="";
 
-for(var i=1;i<rows.length;i++){
-
-var kolom = rows[i].split(",");
-
-if(kolom.length>2){
-
+for(var i=0;i<data.length;i++){
 html += "<tr>";
-html += "<td>"+i+"</td>";
-html += "<td>"+kolom[0]+"</td>";
-html += "<td>"+kolom[2]+"</td>";
+html += "<td>"+(i+1)+"</td>";
+html += "<td>"+data[i].nama+"</td>";
+html += "<td>"+data[i].nilai+"</td>";
 html += "</tr>";
-
-}
-
 }
 
 document.getElementById("ranking").innerHTML = html;
