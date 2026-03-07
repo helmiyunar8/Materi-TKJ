@@ -60,21 +60,40 @@ margin-top:0;
 
 /* MENU UTAMA */
 
-.main-menu{
-margin-top:35px;
+/* DASHBOARD KOTAK */
+
+.dashboard{
+display:grid;
+grid-template-columns:repeat(3,180px);
+gap:20px;
+justify-content:center;
+margin-top:40px;
 }
 
-.main-menu a{
-display:block;
+.card{
 background:#1f4f6a;
-padding:15px;
-margin:12px auto;
-width:320px;
-color:white;
+padding:25px;
+border-radius:12px;
 text-decoration:none;
-border-radius:10px;
+color:white;
 font-size:18px;
 transition:0.3s;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.card:hover{
+background:#ffd166;
+color:black;
+transform:scale(1.05);
+}
+
+/* WATERMARK */
+
+.footer{
+margin-top:60px;
+font-size:14px;
+color:#ccc;
+opacity:0.8;
 }
 
 .main-menu a:hover{
@@ -133,24 +152,26 @@ hari.toLocaleDateString();
 
 <!-- MENU UTAMA -->
 
-<div class="main-menu">
+<div class="dashboard">
 
-<a href="materi.html">📚 Materi Pembelajaran</a>
+<a href="materi.html" class="card">📚<br>Materi</a>
 
-<a href="quiz10.html">🧠 Quiz Online</a>
+<a href="quiz10.html" class="card">🧠<br>Quiz</a>
 
-<a href="tryout.html">📝 Tryout TKJ</a>
+<a href="tryout.html" class="card">📝<br>Tryout</a>
 
-<a href="absensi.html">📋 Absensi Siswa</a>
+<a href="absensi.html" class="card">📋<br>Absensi</a>
 
-<a href="tugas.html">📝 Tugas Siswa</a>
+<a href="ranking.html" class="card">🏆<br>Ranking</a>
 
-<a href="ranking.html">🏆 Ranking Nilai</a>
-
-<a href="about.html">👨‍🏫 Tentang Guru</a>
+<a href="sertifikat.html" class="card">🎓<br>Sertifikat</a>
 
 </div>
 
 </body>
+  <div class="footer">
+© 2025 LMS TKJ | Developed by Helmi Yunar
+</div>
 
 </html>
+
